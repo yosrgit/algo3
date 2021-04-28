@@ -1,0 +1,31 @@
+
+
+FUNCTION dot_produt(var V1: ARRAY_OF FLOAT[3], V2: ARRAY_OF float[3];) : FLOAT
+VAR
+    k:INTEGER:=0;
+    ps:FLOAT:=0; 
+
+BEGIN
+    FOR i FROM 0 TO V1.length-1 STEP 1 DO
+    FOR j FROM 0 TO V2.length-1 STEP 1 DO
+    ps:=ps+V1[i]*V2[j]
+    END_FOR
+    END_FOR
+    IF (ps=0) THEN
+        WRITE("les deux vecteurs orthogonaux")
+    ELSE
+        WRITE ("les deux vecteurs ne sot pas orthogonaux")
+    END_IF
+    RETURN (ps) ;
+END
+ALGORITHM produit_scalaire
+VAR
+    V1 , V2 :FLOAT
+BEGIN
+    WRITE("donner V1")
+    read (V1)
+    WRITE ("donner V2")
+    read (V2)
+    dot_product(V1,V2)
+
+END
